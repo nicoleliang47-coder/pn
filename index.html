@@ -25554,11 +25554,6 @@ async function generateAAFCOReport() {
         alignment: AlignmentType.RIGHT,
         border: { bottom:{ style:BorderStyle.SINGLE, size:4, color:'AAAAAA', space:1 } },
       })] }) },
-      footers: { default: new Footer({ children: [new Paragraph({
-        children: [ten('© '+yr+' Yi-Cheng Hou, Ph.D.  All Rights Reserved', 16, false, '888888')],
-        alignment: AlignmentType.CENTER,
-        border: { top:{ style:BorderStyle.SINGLE, size:4, color:'AAAAAA', space:1 } },
-      })] }) },
       children: [
         // ── 封面 ────────────────────────────────────────────
         para([tr('寵物餐食研發專案', 44, true)], AlignmentType.CENTER, { before:400, after:80 }),
@@ -25569,14 +25564,10 @@ async function generateAAFCOReport() {
         para([tr('已絕育成年'+speciesStr+'消化之原型食材模組研發', 24, true, '1F3864')], AlignmentType.CENTER, { before:0, after:40 }),
         para([ten('The Effects of Whole Food Modules on Neutered Adult '+( sp==='dog'?'Dogs':'Cats'), 18, false, '1F3864')], AlignmentType.CENTER, { before:0, after:300 }),
         new Paragraph({ children:[], border:{ bottom:{ style:BorderStyle.SINGLE, size:8, color:'1F3864', space:1 } }, spacing:{ before:0, after:300 } }),
-        para([tr('   專案編號：', 22, true), ten(projectId, 22)], AlignmentType.LEFT, { before:100, after:60 }),
-        para([tr('         研發配方：', 22, true), ten(formulaId, 22), tr('（'+ingredients+'）', 20)], AlignmentType.LEFT, { before:0, after:60 }),
+        para([tr('         研發配方：', 22, true), ten(formulaId, 22), tr('（'+ingredients+'）', 20)], AlignmentType.LEFT, { before:100, after:60 }),
         para([tr('      目標對象：', 22, true), ten(wt+' kg ', 22), tr(neuStr+'成年'+speciesStr+'（中型'+speciesStr+'生理模組）', 22)], AlignmentType.LEFT, { before:0, after:60 }),
-        para([tr('研發負責人：', 22, true), tr('侯沂錚 博士', 22)], AlignmentType.LEFT, { before:0, after:0 }),
-        para([ten('（Yi-Cheng Hou, Ph.D.）', 20)], AlignmentType.LEFT, { before:0, after:80 }),
         para([tr('中華民國 '+rocYr+'年 '+String(today.getMonth()+1).padStart(2,'0')+'月', 22)], AlignmentType.LEFT, { before:0, after:0 }),
         para([ten(moName+' '+yr, 20)], AlignmentType.LEFT, { before:0, after:500 }),
-        para([new TextRun({ text:'© '+yr+' 侯沂錚 博士 / Yi-Cheng Hou, Ph.D.  版權所有', bold:true, size:18, color:'CC0000', font:{ name:KAI } })], AlignmentType.LEFT, { before:200, after:60 }),
         para([new TextRun({ text:'本報告為委託研發成果，僅授權委託方單次使用，未經書面授權不得重製、引用或轉讓。', bold:true, size:18, color:'CC0000', font:{ name:KAI } })], AlignmentType.LEFT, { before:0, after:0 }),
         BR,
 
@@ -25713,7 +25704,6 @@ async function generateAAFCOReport() {
         // ── 聲明事項 ────────────────────────────────────────
         new Paragraph({ children:[tr('聲明事項 Disclaimer', 22, true)], spacing:{ before:300, after:120 }, border:{ top:{ style:BorderStyle.SINGLE, size:6, color:'888888', space:1 } } }),
         para([new TextRun({ text:'本報告採用食材平均組成值，天然食材因品種、產地、季節及烹調條件差異，實際營養素含量可能偏差；未經實驗室近似分析或 ICP-MS 驗證，僅作為研發配方評估之參考依據，不構成最終產品之營養保證。本報告不替代持照獸醫師（DVM）之臨床評估，配方最終合規性須由具備相關資格之寵物營養專業人員確認。', italics:true, size:18, font:{ name:KAI } })], AlignmentType.JUSTIFIED, { before:0, after:100 }),
-        para([new TextRun({ text:'© '+yr+' Yi-Cheng Hou, Ph.D.  All Rights Reserved.  未經書面授權，不得重製、轉載或轉讓。', bold:true, size:18, color:'CC0000', font:{ name:TNR } })], AlignmentType.LEFT, { before:0, after:0 }),
       ],
     }],
   });
